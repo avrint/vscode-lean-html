@@ -1,6 +1,6 @@
 # Lean HTML Language Support (`vscode-lean-html`)
 
-Bring powerful syntax support, smart diagnostics, and template tooling to your lightweight HTML and fragment workflows. This extension provides first-class support for custom `*.fragment.html` / `*.hml` files, Handlebars expressions, embedded JSON data payloads, and `<html-include>` components.
+Bring powerful syntax support, smart diagnostics, and template tooling to your lightweight HTML and fragment workflows. This extension provides first-class support for custom `*.fragment.html` **(HTML Fragment)** and `*.hml` **(Lean HTML)** files, Handlebars expressions, embedded JSON data payloads, and `<html-include>` components.
 
 
 ## Features
@@ -37,7 +37,7 @@ This extension works seamlessly with your existing editor configurations and res
 ### 0.0.1
 
 * Initial release of Lean HTML Support.
-* Added support for custom `*.fragment.html` and `*.fragment.hml` file types.
+* Added support for custom `*.fragment.html` (HTML Fragment) and `*.hml`(Lean HTML) file types.
 * Added TextMate grammar injection for JSON inside `<data>` tags.
 * Added Handlebars syntax highlighting and block autocompletions.
 * Added live diagnostic error checking for `<html-include>` and `<data>` blocks.

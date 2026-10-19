@@ -16,12 +16,19 @@
     "handlebars": {
       "patterns": [
         {
-          "name": "keyword.control.handlebars",
-          "match": "{{{?\\s*(#each|#if|#unless|#with|else|/each|/if|/unless|/with)\\b"
-        },
-        {
-          "name": "variable.parameter.handlebars",
-          "match": "{{{?\\s*[a-zA-Z0-9_.-]+\\s*}}}?"
+          "name": "meta.embedded.block.handlebars",
+          "begin": "{{{?",
+          "end": "}}}?",
+          "patterns": [
+            {
+              "name": "keyword.control.handlebars",
+              "match": "\\b(#each|#if|#unless|#with|else|/each|/if|/unless|/with)\\b"
+            },
+            {
+              "name": "variable.other.object.property.handlebars",
+              "match": "[a-zA-Z0-9_.-]+"
+            }
+          ]
         }
       ]
     }

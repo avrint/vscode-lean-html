@@ -1,0 +1,30 @@
+{
+  "scopeName": "injection.lean.attrs.js",
+  "injectionSelector": "L:text.html.basic, L:text.html.fragment, L:text.html.lean",
+  "patterns": [
+    {
+      "begin": "(<!--)\\s*(lean-attrs)",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.comment.html" },
+        "2": { "name": "entity.name.tag.lean-attrs" }
+      },
+      "end": "(-->)",
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.comment.html" }
+      },
+      "contentName": "meta.embedded.block.lean-attrs",
+      "patterns": [
+        {
+          "include": "source.js"
+        },
+        {
+          "captures": {
+            "1": { "name": "variable.other.object.property.lean-attrs" },
+            "2": { "name": "keyword.operator.optional.lean-attrs" }
+          },
+          "match": "([a-zA-Z0-9_$-]+)(\\?)?\\s*:"
+        }
+      ]
+    }
+  ]
+}
