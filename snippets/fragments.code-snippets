@@ -1,0 +1,17 @@
+{
+  "HTML Include with Data": {
+    "prefix": "html-inc",
+    "body": [
+      "<html-include src=\"sections/${1:name}.html\" title=\"${2:Title}\">",
+      "\t<data>",
+      "\t\t{",
+      "\t\t\t\"items\": [",
+      "\t\t\t\t{ \"name\": \"${3:Item Name}\", \"price\": \"\\$${4:29}\", \"showBadge\": true }",
+      "\t\t\t]",
+      "\t\t}",
+      "\t</data>",
+      "</html-include>"
+    ],
+    "description": "Insert a custom html-include block with data payload"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "vscode-lean-html",
+  "displayName": "Lean Html Language Support",
+  "version": "0.0.1",
+  "description": "Syntax highlighting and IDE integrations for lean-html projects",
+  "categories": [
+    "Other"
+  ],
+  "publisher": "Avrint",
+  "main": "./extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "fragment-html",
+        "aliases": ["HTML Fragment", "fragment-html"],
+        "extensions": [".fragment.html", ".fragment.hml"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "html-lean",
+        "aliases": ["Lean HTML", "html-lean"],
+        "extensions": [".html"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "fragment-html",
+        "scopeName": "text.html.fragment",
+        "path": "./syntaxes/fragment.tmLanguage.json"
+      },
+      {
+        "language": "html-lean",
+        "scopeName": "text.html.lean",
+        "path": "./syntaxes/html-lean.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.json": "json"
+        }
+      },
+      {
+        "scopeName": "injection.data.json",
+        "path": "./syntaxes/data-json-injection.tmLanguage.json",
+        "injectTo": ["text.html.lean", "text.html.fragment"],
+        "embeddedLanguages": {
+          "meta.embedded.block.json": "json"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "path": "./snippets/fragments.code-snippets"
+      }
+    ]
+  },
+  "activationEvents": [],
+  "devDependencies": {
+    "@types/node": "20.x",
+    "@types/vscode": "^1.80.0"
+  },
+  "engines": {
+    "vscode": "^1.140.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "scopeName": "text.html.lean",
+  "fileTypes": ["html"],
+  "patterns": [
+    {
+      "begin": "(<)(data)(\\s+[^>]*)?(>)",
+      "beginCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.html" },
+        "2": { "name": "entity.name.tag.html" },
+        "3": { "name": "entity.other.attribute-name.html" },
+        "4": { "name": "punctuation.definition.tag.end.html" }
+      },
+      "end": "(</)(data)(>)",
+      "endCaptures": {
+        "1": { "name": "punctuation.definition.tag.begin.html" },
+        "2": { "name": "entity.name.tag.html" },
+        "3": { "name": "punctuation.definition.tag.end.html" }
+      },
+      "contentName": "meta.embedded.block.json",
+      "patterns": [
+        {
+          "include": "source.json"
+        }
+      ]
+    },
+    {
+      "include": "text.html.basic"
+    }
+  ]
+}

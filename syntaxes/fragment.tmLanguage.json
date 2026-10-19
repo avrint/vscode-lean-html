@@ -1,0 +1,29 @@
+{
+  "scopeName": "text.html.fragment",
+  "fileTypes": [
+    "fragment.html",
+    "fragment.hml"
+  ],
+  "patterns": [
+    {
+      "include": "#handlebars"
+    },
+    {
+      "include": "text.html.basic"
+    }
+  ],
+  "repository": {
+    "handlebars": {
+      "patterns": [
+        {
+          "name": "keyword.control.handlebars",
+          "match": "{{{?\\s*(#each|#if|#unless|#with|else|/each|/if|/unless|/with)\\b"
+        },
+        {
+          "name": "variable.parameter.handlebars",
+          "match": "{{{?\\s*[a-zA-Z0-9_.-]+\\s*}}}?"
+        }
+      ]
+    }
+  }
+}
